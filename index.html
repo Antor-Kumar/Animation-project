@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<style>
+		*{
+			margin: 0;
+			padding: 0;
+			box-sizing: border-box;
+		}
+		.container{
+			width: 100vw;
+			height:100vh;
+			background:black;
+			display:grid;
+			place-items:center;
+			align-items:center;
+
+		}
+		.square{
+			width:10rem;
+			height:10rem;
+			background:pink;
+			position:relative;
+			transform:rotate(45deg);
+			animation: beater 3s linear infinite;
+		}
+		.square::before{
+			content:'';
+			width:100%;
+			height:100%;
+			background-color:pink;
+			position:absolute;
+			border-radius:50%;
+			transform:translateY(-50%);
+			animation: beater 3s linear infinite;
+
+		}
+		.square::after{
+			content:'';
+			width:100%;
+			height:100%;
+			background-color:pink;
+			position:absolute;
+			border-radius:50%;
+			transform:translateX(-50%);
+			animation: beater 3s linear infinite;
+		}
+		@keyframes beater {
+			0%{
+				background: red;
+			}
+			15%{
+				transform:scale(0.5);
+				background: orange;
+			}
+			30%{
+				background: Yellow;
+			}
+			45%{
+				background: greenyellow;
+			}
+			60%{
+				background: blue;
+			}
+			75% {
+                background: indigo;
+            }
+  
+            100% {
+                background: violet;
+		    }
+		}
+	</style>
+</head>
+<body>
+	<div class="container">
+	<div class="square"></div>
+	</div>
+</body>
+</html>
